@@ -1,4 +1,4 @@
-### Leaflet Map Cachine tests
+### Leaflet Map Caching tests
 
 To install you need to [install](https://nodejs.org/en/download/) `node` then make sure you have `bower` installed.
 
