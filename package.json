@@ -1,0 +1,19 @@
+{
+  "name": "leaflet-caching",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parallelshell \"corsproxy\" \"serve -p 8989 .\" \"open http://localhost:8989\"",
+    "setup": "npm install && bower install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "corsproxy": "^1.4.0",
+    "open": "0.0.5",
+    "parallelshell": "^2.0.0",
+    "serve": "^1.4.0"
+  }
+}
