@@ -30,23 +30,27 @@ $(document).ready(function(){
       attribution: '&copy; <a href="http://bing.com/maps">Bing Maps</a>',
       maxZoom: 16,
       detectRetina: true,
-      useCache: true
+      useCache: true,
+      cacheMaxAge: 4*7*24*60*60*1000
   });
 
   var LayerOSM = L.tileLayer.provider('OpenStreetMap', {
     detectRetina: true,
-    useCache: true
+    useCache: true,
+    cacheMaxAge: 4*7*24*60*60*1000
   });
   var LayerOpenCycleMap = L.tileLayer.provider('Thunderforest.OpenCycleMap', {
     detectRetina: true,
-    useCache: true
+    useCache: true,
+    cacheMaxAge: 4*7*24*60*60*1000
   });
   var LayerOpenTopo = L.tileLayer.provider('OpenTopoMap', {
     detectRetina: true
   });
   var LayerEsriSat = L.tileLayer.provider('Esri.WorldImagery', {
     detectRetina: true,
-    useCache: true
+    useCache: true,
+    cacheMaxAge: 4*7*24*60*60*1000
   });
 
 
@@ -65,4 +69,6 @@ $(document).ready(function(){
   };
 
   L.control.layers(layers).addTo(map);
+
+  L.control.scale().addTo(map);
 });
