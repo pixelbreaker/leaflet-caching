@@ -6,7 +6,7 @@ run `npm install bower -g`.
 
 Once you have cloned this project using
 ```
-git clone git@github.com:pixelbreaker/leaflet-caching.git
+git clone https://github.com/pixelbreaker/leaflet-caching.git
 ```
 
 Run `npm run setup` once that has completed, run the app with `npm start`.

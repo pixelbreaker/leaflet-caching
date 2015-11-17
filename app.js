@@ -64,7 +64,7 @@ $(document).ready(function(){
     "OS Maps": LayerOS,
     "Open Street Maps": LayerOSM,
     "Open Cycle Maps": LayerOpenCycleMap,
-    "Open Topo Maps": LayerOpenTopo,
+    "Open Topo Maps": LayerOpenTopo
     "Esri Satellite": LayerEsriSat
   };
 
