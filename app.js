@@ -1,10 +1,16 @@
 $(document).ready(function(){
   var BingLayer = L.TileLayer.extend({
+    // Bing Maps' Key
+    // credentials: "AnTcaqBi2ypp0xI-OZNi4W_ik2KhjgpqioTAtXLC8GzkMBQRMlyxvxyTnd5b73im",
+    // My own key
+    // credentials: "AvrICdbWVmXh4YcxNMjCG8IQEljWmMPEIi_4yk60ednZql1rZuLFNrzpA1YzADE3",
+    credentials: "AsXTYlvGm7gWw2wpW4N1woffDL_gpZaEvFnKRQcMFqsqhfFwHqWhaf5Py3qGsPIT",
     getTileUrl: function (tilePoint) {
       this._adjustTilePoint(tilePoint);
       return L.Util.template(this._url, {
         s: this._getSubdomain(tilePoint),
-        q: this._quadKey(tilePoint.x, tilePoint.y, this._getZoomForUrl())
+        q: this._quadKey(tilePoint.x, tilePoint.y, this._getZoomForUrl()),
+        credentials: this.credentials
       });
     },
     _quadKey: function (x, y, z) {
@@ -25,7 +31,9 @@ $(document).ready(function(){
     }
   });
 
-  var LayerOS = new BingLayer('http://localhost:1337/ak.dynamic.t{s}.tiles.virtualearth.net/comp/ch/{q}?mkt=en-GB&it=G,OS,BX,RL&shading=hill&n=z&og=107&key=Ap0Nw80Jm3CbYCPvzZc6DPF9GTkbWQ-pGysYKbtLYEobQqeVODLRPmnFQOhzDkzq&c4w=1', {
+  // var LayerOS = new BingLayer('http://localhost:1337/ak.t{s}.tiles.virtualearth.net/tiles/r{q}.png?g=4510&productSet=mmOS&key={credentials}', {
+  // var LayerOS = new BingLayer('http://localhost:1337/ak.dynamic.t{s}.tiles.virtualearth.net/comp/ch/{q}?mkt=en-GB&it=G,OS,BX,RL&shading=hill&n=z&og=110&key=Amp-JLUUMFtSIrdhUZllyEaonfEsFXQte82Ccu-NDPpQWXDmnjX8_PQY4GZGt0Fj&c4w=1', {
+  var LayerOS = new BingLayer('http://localhost:1337/ak.dynamic.t{s}.tiles.virtualearth.net/comp/ch/{q}?mkt=en-GB&it=G,OS,BX,RL&shading=hill&n=z&og=107&key={credentials}&c4w=1', {
       subdomains: ['0', '1', '2', '3', '4', '5', '6', '7'],
       attribution: '&copy; <a href="http://bing.com/maps">Bing Maps</a>',
       maxZoom: 16,
