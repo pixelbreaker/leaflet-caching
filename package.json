@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parallelshell \"corsproxy\" \"node server\" \"open http://localhost:8989\"",
     "dev": "parallelshell \"corsproxy\" \"serve -p 8989 ./client\" \"open http://localhost:8989\"",
-    "postinstall": "npm install && bower install"
+    "postinstall": "bower install"
   },
   "author": "",
   "license": "ISC",
