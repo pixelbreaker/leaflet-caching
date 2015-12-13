@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parallelshell \"corsproxy\" \"node server\"",
+    "start": "parallelshell \"node server\"",
     "dev": "parallelshell \"node server\" \"open http://localhost:8989\"",
     "postinstall": "bower install"
   },
@@ -19,7 +19,6 @@
     "body-parser": "^1.14.1",
     "bower": "^1.5.3",
     "cookie-parser": "^1.4.0",
-    "corsproxy": "^1.4.0",
     "dotenv": "^1.2.0",
     "express": "^4.13.3",
     "fs-jetpack": "^0.7.0",
