@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parallelshell \"corsproxy\" \"node server\"",
-    "dev": "parallelshell \"corsproxy\" \"serve -p 8989 ./client\" \"open http://localhost:8989\"",
+    "dev": "parallelshell \"corsproxy\" \"node server\" \"open http://localhost:8989\"",
     "postinstall": "bower install"
   },
   "engines": {
