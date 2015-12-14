@@ -42,6 +42,8 @@ auth = function (req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// CORS proxying for use with bing maps so that the tiles can be cached in Leaflet.TileLayer.PouchDB
 app.all(/^\/cors\/(.*)$/, function (req, res, next) {
   // Set CORS headers: allow all origins, methods, and headers: you may want to lock this down in a production environment
   res.header("Access-Control-Allow-Origin", "*");
@@ -52,9 +54,9 @@ app.all(/^\/cors\/(.*)$/, function (req, res, next) {
     // CORS Preflight
     res.send();
   } else {
-    var targetURL = 'http://' + req.params[0];//req.header('Target-URL');
+    var targetURL = 'http://' + req.params[0];
     if (!targetURL) {
-      res.send(500, { error: 'There is no Target-Endpoint header in the request' });
+      res.send(500, { error: 'No URL supplied to proxy to.' });
       return;
     }
     request({ url: targetURL, method: req.method, json: req.body, qs:req.query, headers: {'Authorization': req.header('Authorization')} },
@@ -65,6 +67,8 @@ app.all(/^\/cors\/(.*)$/, function (req, res, next) {
       }).pipe(res);
   }
 });
+
+// static files
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 app.use(auth, express.static(path.join(__dirname, 'client')));
 
