@@ -23,7 +23,8 @@
     "leaflet-providers": "~1.1.6",
     "Leaflet.TileLayer.PouchDBCached": "MazeMap/Leaflet.TileLayer.PouchDBCached#df0e80a886bff62be3d438accd31bcff4b2744c8",
     "Leaflet.FileLayer": "makinacorpus/Leaflet.FileLayer",
-    "togeojson": "mapbox/togeojson"
+    "togeojson": "mapbox/togeojson",
+    "js-cookie": "~2.1.0"
   },
   "resolutions": {
     "Leaflet.TileLayer.PouchDBCached": "df0e80a886bff62be3d438accd31bcff4b2744c8"

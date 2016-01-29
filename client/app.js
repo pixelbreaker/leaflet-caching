@@ -61,11 +61,12 @@ $(document).ready(function(){
     cacheMaxAge: 4*7*24*60*60*1000
   });
 
+  var initPos = Cookies.get();
 
   var map = new L.Map(document.querySelector('.map'), {
     layers: [LayerOS],
-    center: new L.LatLng(52.56155, -1.82390),
-    zoom: 10
+    center: new L.LatLng(initPos.lat || 52.56155, initPos.lng || -1.82390),
+    zoom: initPos.zoom || 10
   });
 
   var layers = {
@@ -101,5 +102,11 @@ $(document).ready(function(){
       // layerswitcher.addOverlay(e.layer, e.filename);
       // console.log(e.layer.getBounds());
       // LayerOS.seed(e.layer.getBounds(), 12, 14);
+  });
+
+  $(window).unload(function() {
+    Cookies.set('lat', map.getCenter().lat);
+    Cookies.set('lng', map.getCenter().lng);
+    Cookies.set('zoom', map.getZoom());
   });
 });
