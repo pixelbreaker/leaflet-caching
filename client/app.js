@@ -66,7 +66,8 @@ $(document).ready(function(){
   var map = new L.Map(document.querySelector('.map'), {
     layers: [LayerOS],
     center: new L.LatLng(initPos.lat || 52.56155, initPos.lng || -1.82390),
-    zoom: initPos.zoom || 10
+    zoom: initPos.zoom || 10,
+    scrollWheelZoom: false
   });
 
   var layers = {
