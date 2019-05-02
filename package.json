@@ -25,7 +25,6 @@
     "jade": "^1.11.0",
     "open": "0.0.5",
     "parallelshell": "^2.0.0",
-    "request": "^2.67.0",
-    "serve": "^1.4.0"
+    "request": "^2.67.0"
   }
 }
